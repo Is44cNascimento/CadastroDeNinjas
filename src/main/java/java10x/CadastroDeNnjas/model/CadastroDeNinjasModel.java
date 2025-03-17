@@ -1,4 +1,4 @@
-package model;
+package java10x.CadastroDeNnjas.model;
 
 
 
