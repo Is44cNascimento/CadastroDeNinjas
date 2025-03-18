@@ -2,10 +2,13 @@ package java10x.CadastroDeNnjas.missoes.model;
 
 
 import jakarta.persistence.*;
+import java10x.CadastroDeNnjas.ninjas.model.CadastroDeNinjasModel;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
-public class missoesModel {
+public class MissoesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +17,15 @@ public class missoesModel {
     private String nomeMissao;
     private String Dificuldade;
 
+    @OneToMany(mappedBy = "missoes")
+    private List<CadastroDeNinjasModel> ninjas;
 
-    public missoesModel() {
+
+
+    public MissoesModel() {
     }
 
-    public missoesModel(Long id, String nomeMissao, String dificuldade) {
+    public MissoesModel(Long id, String nomeMissao, String dificuldade) {
         this.id = id;
         this.nomeMissao = nomeMissao;
         Dificuldade = dificuldade;

@@ -2,6 +2,7 @@ package java10x.CadastroDeNnjas.ninjas.model;
 
 
 import jakarta.persistence.*;
+import java10x.CadastroDeNnjas.missoes.model.MissoesModel;
 
 //JPA java persistence API
 //Tranformar uma classe em uma entidade DB
@@ -20,15 +21,28 @@ public class CadastroDeNinjasModel  {
     private String email;
 
 
+    @ManyToOne
+    @JoinColumn(name = "missoes_id")
+    private MissoesModel missoes;
+
+    public MissoesModel getMissoes() {
+        return missoes;
+    }
+
+    public void setMissoes(MissoesModel missoes) {
+        this.missoes = missoes;
+    }
+
     public CadastroDeNinjasModel() {
     }
 
-    public CadastroDeNinjasModel(int idade, String nome, String email) {
+    public CadastroDeNinjasModel(Long id, int idade, String nome, String email, MissoesModel missoes) {
+        this.id = id;
         this.idade = idade;
         this.nome = nome;
         this.email = email;
+        this.missoes = missoes;
     }
-
 
     public int getIdade() {
         return idade;
