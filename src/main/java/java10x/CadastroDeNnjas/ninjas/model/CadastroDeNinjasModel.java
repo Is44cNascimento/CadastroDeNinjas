@@ -1,4 +1,4 @@
-package java10x.CadastroDeNnjas.model;
+package java10x.CadastroDeNnjas.ninjas.model;
 
 
 import jakarta.persistence.*;

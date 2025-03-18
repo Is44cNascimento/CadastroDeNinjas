@@ -1,4 +1,4 @@
-package java10x.CadastroDeNnjas.Repository;
+package java10x.CadastroDeNnjas.ninjas;
 
 import org.springframework.stereotype.Repository;
 
